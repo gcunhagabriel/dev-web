@@ -1,4 +1,4 @@
-<?
+<?php
   include("../../service/funcionario.service.php");
   $acao = $_POST['acao'];
   $nome = isset($_POST['nome'])?$_POST['nome']:null;

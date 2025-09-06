@@ -41,7 +41,7 @@
         }
         public function cadastrar() {
             $this->encontraUltimoId();
-            //TODO: Cadastrar  no arquivo.
+            //TODO: Cadastrar no arquivo.
             $arquivo = fopen($this->nomeArquivo, "a");
             fwrite($arquivo, $this->montaLinhaDados()."\n");
             fclose($arquivo);
@@ -51,7 +51,6 @@
             $auxiliar = "";
             while(!feof($arquivo)){
                 $linha = fgets($arquivo);
-                var_dump($linha);
                 if(empty($linha))
                     continue;
                 $dados = explode(self::SEPARADOR, $linha);
@@ -60,11 +59,12 @@
                     $auxiliar .= $linha;
                 }
             }
-            if(!empty($auxiliar)){
+            if(!empty($auxiliar) || count(file($this->nomeArquivo)) == 1){
                 ftruncate($arquivo, 0);
                 rewind($arquivo);
                 fwrite($arquivo, $auxiliar);
             }
+            
             
             fclose($arquivo);
         
@@ -74,7 +74,6 @@
             $auxiliar = "";
             while(!feof($arquivo)){
                 $linha = fgets($arquivo);
-                var_dump($linha);
                 if(empty($linha))
                     continue;
                 $dados = explode(self::SEPARADOR, $linha);
@@ -96,5 +95,4 @@
             fclose($arquivo);
         }
     }
-
 ?>

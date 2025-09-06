@@ -36,16 +36,15 @@
             echo "<tr><td>".$funcionario->nome."</td>";
             echo "<td>".$funcionario->salario."</td>";
             echo "<td>".$funcionario->telefone."</td>";
-            echo "<td><a href='http://localhost:81/Aula%2007-10/telas/funcionario/cadastro_funcionario.php?id=".$funcionario->id."'>Alterar</a></td>";
+            echo "<td><a href='http://localhost/dev-web/padaria/telas/funcionario/cadastro_funcionario.php?id=".$funcionario->id."'><button type='submit'>Alterar</button></a></td>";
+            echo "<td><form action='executa_acao_funcionario.php' method='post'><input type='hidden' name='acao' value='remover'><input type='hidden' name='id' value='".$funcionario->id."'><button type='submit'>Remover</button></form></td>";
             echo "</tr>";
         }
         echo "</tbody></table>";
 
     }
 
-
     function listarTodosFuncionarios() {
         return Funcionario::listar("");
     }
-
 ?>
