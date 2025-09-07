@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-  include("../../service/produto.service.php");
+  require_once __DIR__ . ("/../../service/produto.service.php");
     $produto = "";
     if(isset($_GET["id"]))
         $produto = pegaProdutoPeloId($_GET["id"]);

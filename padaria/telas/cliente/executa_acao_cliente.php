@@ -1,5 +1,5 @@
 <?php
-  include("../../service/cliente.service.php");
+  require_once __DIR__ . "/../../service/cliente.service.php";
   $acao = $_POST['acao'];
   $nome = isset($_POST['nome'])?$_POST['nome']:null;
   $telefone = isset($_POST['telefone'])?$_POST['telefone']:null;

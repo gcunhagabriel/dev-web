@@ -1,5 +1,4 @@
 <?php
-
     abstract class ClassePai {
         public $id;
         private $nomeArquivo="";

@@ -11,7 +11,7 @@
         <button>Filtrar</button>
     </form>
     <?php
-    include("../../service/cliente.service.php");
+    require_once __DIR__ . "/../../service/cliente.service.php";
     $filtro = isset($_POST["filtro"])?$_POST["filtro"]:"";
     listarCliente($filtro);
     ?>

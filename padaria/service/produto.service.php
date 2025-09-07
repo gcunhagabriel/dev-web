@@ -1,5 +1,5 @@
 <?php
-    include("../../model/produto.class.php");
+    require_once __DIR__ . "/../model/produto.class.php";
     function cadastrarProduto($nome, $preco) {
         $produto = new Produto(null, $nome, $preco);
         $produto->cadastrar();
