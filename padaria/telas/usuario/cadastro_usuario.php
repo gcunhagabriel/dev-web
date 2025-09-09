@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="../../style/style.css">
     <script src="cadastro_usuario.js"></script>
 </head>
 <body>
@@ -14,6 +15,7 @@
         $usuario = pegaUsuarioPeloId($_GET["id"]);
 
 ?>
+    <div class="container">
     <form id="formCadastroUsuario" action="executa_acao_usuario.php" method="post">
         <input type="hidden" name="acao" value="<?php if(!empty($usuario)) {
             echo "alterar";
@@ -33,5 +35,6 @@
             echo "Alterar";
         } else echo "Cadastrar"; ?></button>
     </form>
+    </div>
 </body>
 </html>

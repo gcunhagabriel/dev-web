@@ -30,14 +30,15 @@
     function listarUsuario($filtroNome) {
         $usuarios = Usuario::listar($filtroNome);
         echo "<table><thead><tr><th>Nome</th><th>E-mail</th><th>Senha</th>";
-        echo "<th>Ações</th>";//NOVA LINHA
+        echo "<th>Ação 1</th>";//NOVA LINHA
+        echo "<th>Ação 2</th>";//NOVA LINHA
         echo "</tr></thead><tbody>";
         foreach($usuarios as $usuario) {
             echo "<tr><td>".$usuario->nome."</td>";
             echo "<td>".$usuario->email."</td>";
             echo "<td>".$usuario->senha."</td>";
             echo "<td><a href='http://localhost/dev-web/padaria/telas/usuario/cadastro_usuario.php?id=".$usuario->id."'><button type='submit'>Alterar</button></a></td>";
-            echo "<td><form action='executa_acao_usuario.php' method='post'><input type='hidden' name='acao' value='remover'><input type='hidden' name='id' value='".$usuario->id."'><button type='submit'>Remover</button></form></td>";
+            echo "<td><form action='executa_acao_usuario.php' method='post' class='remover'><input type='hidden' name='acao' value='remover'><input type='hidden' name='id' value='".$usuario->id."'><button type='submit'>Remover</button></form></td>";
             echo "</tr>";
         }
         echo "</tbody></table>";

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Cliente</title>
+    <link rel="stylesheet" href="../../style/style.css">
     <script src="cadastro_cliente.js"></script>
 </head>
 <body>
@@ -14,6 +15,7 @@
         $cliente = pegaClientePeloId($_GET["id"]);
 
 ?>
+    <div class="container">
     <form id="formCadastroCliente" action="executa_acao_cliente.php" method="post">
         <input type="hidden" name="acao" value="<?php if(!empty($cliente)) {
             echo "alterar";
@@ -31,5 +33,6 @@
             echo "Alterar";
         } else echo "Cadastrar"; ?></button>
     </form>
+    </div>
 </body>
 </html>

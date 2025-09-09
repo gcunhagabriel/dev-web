@@ -30,14 +30,15 @@
     function listarFuncionario($filtroNome) {
         $funcionarios = Funcionario::listar($filtroNome);
         echo "<table><thead><tr><th>Nome</th><th>Salário</th><th>Telefone</th>";
-        echo "<th>Ações</th>";//NOVA LINHA
+        echo "<th>Ação 1</th>";//NOVA LINHA
+        echo "<th>Ação 2</th>";//NOVA LINHA
         echo "</tr></thead><tbody>";
         foreach($funcionarios as $funcionario) {
             echo "<tr><td>".$funcionario->nome."</td>";
-            echo "<td>".$funcionario->salario."</td>";
+            echo "<td>R$ ".$funcionario->salario."</td>";
             echo "<td>".$funcionario->telefone."</td>";
             echo "<td><a href='http://localhost/dev-web/padaria/telas/funcionario/cadastro_funcionario.php?id=".$funcionario->id."'><button type='submit'>Alterar</button></a></td>";
-            echo "<td><form action='executa_acao_funcionario.php' method='post'><input type='hidden' name='acao' value='remover'><input type='hidden' name='id' value='".$funcionario->id."'><button type='submit'>Remover</button></form></td>";
+            echo "<td><form action='executa_acao_funcionario.php' method='post' class='remover'><input type='hidden' name='acao' value='remover'><input type='hidden' name='id' value='".$funcionario->id."'><button type='submit'>Remover</button></form></td>";
             echo "</tr>";
         }
         echo "</tbody></table>";

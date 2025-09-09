@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produto</title>
+    <link rel="stylesheet" href="../../style/style.css">
     <script src="cadastro_produto.js"></script>
 </head>
 <body>
@@ -14,6 +15,7 @@
         $produto = pegaProdutoPeloId($_GET["id"]);
 
 ?>
+    <div class="container">
     <form id="formCadastroProduto" action="executa_acao_produto.php" method="post">
         <input type="hidden" name="acao" value="<?php if(!empty($produto)) {
             echo "alterar";
@@ -28,5 +30,6 @@
             echo "Alterar";
         } else echo "Cadastrar"; ?></button>
     </form>
+    </div>
 </body>
 </html>

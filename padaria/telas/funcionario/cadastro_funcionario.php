@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Funcionário</title>
+    <link rel="stylesheet" href="../../style/style.css">
     <script src="cadastro_funcionario.js"></script>
 </head>
 <body>
@@ -14,6 +15,7 @@
         $funcionario = pegaFuncionarioPeloId($_GET["id"]);
 
 ?>
+    <div class="container">
     <form id="formCadastroFuncionario" action="executa_acao_funcionario.php" method="post">
         <input type="hidden" name="acao" value="<?php if(!empty($funcionario)) {
             echo "alterar";
@@ -33,5 +35,6 @@
             echo "Alterar";
         } else echo "Cadastrar"; ?></button>
     </form>
+    </div>
 </body>
 </html>

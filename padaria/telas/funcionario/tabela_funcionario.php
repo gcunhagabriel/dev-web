@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela de Funcionários</title>
+    <link rel="stylesheet" href="../../style/style.css">
 </head>
 <body>
     <form method="post">
